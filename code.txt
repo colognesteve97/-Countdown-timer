@@ -1,0 +1,12 @@
+function countdownTimer(timeInSeconds) {
+  let seconds = timeInSeconds;
+  return function() {
+    return --seconds;
+  }
+}
+
+const timer = countdownTimer(10);
+console.log(timer()); // 9
+console.log(timer()); // 8
+console.log(timer()); // 7
+// ...
