@@ -10,3 +10,25 @@ console.log(timer()); // 9
 console.log(timer()); // 8
 console.log(timer()); // 7
 // ...
+
+
+This function takes in a time in seconds and returns an inner function that will decrement the time by one second each time it is called, until it reaches zero.
+
+You can call the inner function multiple times and it will always return the updated time.
+
+You can also use setInterval function that is provided by javascript to create a timer that runs continuously,
+
+
+let timeLeft = 10;
+const timerId = setInterval(() => {
+  if (timeLeft <= 0) {
+    clearInterval(timerId);
+    console.log("Time's up!");
+  } else {
+    console.log(timeLeft);
+    timeLeft--;
+  }
+}, 1000);
+
+Here, The setInterval() method calls a function or evaluates an expression at specified intervals (in milliseconds).
+It will run the function every 1000 ms (1 second) and decrement the timeLeft variable by 1.
